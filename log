@@ -44,3 +44,14 @@ hashmap.c:102:26: error: assignment makes integer from pointer without a cast [-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 69148af
+do., 10 de abr. de 2022 11:35:46: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:102:26: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+             map->current = map->buckets[index]->value;
+                          ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+47e1ae6
