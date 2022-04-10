@@ -80,7 +80,9 @@ void enlarge(HashMap * map)
     }
 
     map->capacity *= 2;
-    map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
+    free(map);
+    map = createMap(map->capacity);
+    //map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
     map->size = 0;
     aux = firstMap(old_map);
     cont = old_map->size;
