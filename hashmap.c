@@ -99,7 +99,7 @@ Pair * searchMap(HashMap * map,  char * key)
     {
         if (is_equal(key , map->buckets[index]->key) == 1)
         {
-            map->current = map->buckets[index]->value;
+            map->current = index;
             return map->buckets[index];
         }
         index = (index + 1) % map->capacity;
