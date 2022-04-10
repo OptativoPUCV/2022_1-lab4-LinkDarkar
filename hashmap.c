@@ -78,20 +78,23 @@ void enlarge(HashMap * map)
         nextMap(map);
         cont -= 1;
     }
-    /*
+
     map->capacity *= 2;
     map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
     map->size = 0;
     aux = firstMap(old_map);
-    while (map->size < old_map->size)
+    cont = old_map->size;
+    while (cont > 0)
     {
         if (map->size != 0)
         {
             aux = nextMap(old_map);
         }
         insertMap(map , aux->key , aux->value);
+        cont -= 1;
     }
 
+    /*
     enlarge_called = 1;
     Pair ** oldBuckets = (Pair **) calloc (map->capacity , sizeof(Pair**));
     //long old_size = map->size;
