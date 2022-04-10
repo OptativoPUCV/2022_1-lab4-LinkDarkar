@@ -86,11 +86,8 @@ void enlarge(HashMap * map)
     cont = old_map->size;
     while (cont > 0)
     {
-        if (map->size != 0)
-        {
-            aux = nextMap(old_map);
-        }
         insertMap(map , aux->key , aux->value);
+        aux = nextMap(old_map);
         cont -= 1;
     }
 
