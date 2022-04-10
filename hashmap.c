@@ -42,7 +42,6 @@ int is_equal(void* key1, void* key2)
     return 0;
 }
 
-
 void insertMap(HashMap * map, char * key, void * value)
 {
     long index = hash(key , map->capacity);
@@ -69,7 +68,6 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map)
 {
-    /*
     enlarge_called = 1; //no borrar (testing purposes)
     HashMap * old_map = createMap(map->capacity);
     Pair * aux = firstMap(map);
@@ -78,6 +76,7 @@ void enlarge(HashMap * map)
         insertMap(old_map , aux->key , aux->value);
         nextMap(map);
     }
+    /*
     map->capacity *= 2;
     map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
     map->size = 0;
@@ -90,13 +89,14 @@ void enlarge(HashMap * map)
         }
         insertMap(map , aux->key , aux->value);
     }
-    */
+
+   /*
     enlarge_called = 1;
     Pair ** oldBuckets = (Pair **) calloc (map->capacity , sizeof(Pair**));
-    long old_size = map->size;
+    //long old_size = map->size;
     long old_capacity = map->capacity;
     oldBuckets = map->buckets; //esta mal pero segurisimo vamos
-
+    for (long idx = map->current ; idx)
 
     map->capacity *= 2;
     free(map);
@@ -109,6 +109,7 @@ void enlarge(HashMap * map)
             insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
         }
     }
+    */
 }
 
 HashMap * createMap(long capacity)
@@ -173,7 +174,7 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
-    for (int index = map->current + 1 ; index < map->capacity - 1 ; index = ((index + 1) % map->capacity))
+    for (long index = map->current + 1 ; index < map->capacity - 1 ; index = ((index + 1) % map->capacity))
     {
         if (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
         {

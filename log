@@ -216,3 +216,14 @@ hashmap.c:96:10: error: unused variable 'old_size' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0f5a98f
+do., 10 de abr. de 2022 19:40:45: 
+ hashmap.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:93:4: error: "/*" within comment [-Werror=comment]
+    /*
+     
+cc1.exe: all warnings being treated as errors
+Compilation failed
+9ae10c1
