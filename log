@@ -84,3 +84,14 @@ do., 10 de abr. de 2022 11:50:46:
  1 file changed, 7 insertions(+)
  tests:  0|0
 28b8baf
+do., 10 de abr. de 2022 11:51:44: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+hashmap.c: In function 'firstMap':
+hashmap.c:130:26: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+             map->current = map->buckets[cont]->key;
+                          ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+de21f65
