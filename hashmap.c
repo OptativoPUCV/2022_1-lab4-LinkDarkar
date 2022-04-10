@@ -71,17 +71,26 @@ void enlarge(HashMap * map)
 {
     enlarge_called = 1; //no borrar (testing purposes)
     HashMap * old_map = createMap(map->capacity);
+    long index;
+    Pair * aux = firstMap(map);
+    while (old_map->size < map->size)
+    {
+        insertMap(old_map , aux->key , aux->value);
+        nextMap(map);
+    }
     map->capacity *= 2;
     map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
     map->size = 0;
     long index;
-    Pair * aux = firstMap(old_map);
+    aux = firstMap(old_map);
     while (map->size < old_map->size)
     {
-        index = hash(aux->key , map->capacity);
-        index += 1;
+        if (map->size != 0)
+        {
+            aux = nextMap(old_map);
+        }
+        insertMap(map , aux->key , aux->value);
     }
-
 }
 
 

@@ -177,3 +177,20 @@ do., 10 de abr. de 2022 12:50:12:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 bb2bbb4
+do., 10 de abr. de 2022 13:03:15: 
+ hashmap.c | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:84:10: error: redeclaration of 'index' with no linkage
+     long index;
+          ^~~~~
+hashmap.c:74:10: note: previous declaration of 'index' was here
+     long index;
+          ^~~~~
+hashmap.c:84:10: error: unused variable 'index' [-Werror=unused-variable]
+     long index;
+          ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+0998ccf
