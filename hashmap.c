@@ -125,7 +125,7 @@ Pair * firstMap(HashMap * map)
 {
     for (int cont = 0 ; cont < map->capacity ; cont += 1)
     {
-        if (map->buckets[cont]->key != NULL && map->buckets[cont] != NULL)
+        if (map->buckets[cont] != NULL && map->buckets[cont]->key != NULL)
         {
             map->current = cont;
             return map->buckets[cont];
