@@ -136,3 +136,17 @@ do., 10 de abr. de 2022 12:12:57:
  tests:  16|1
 total_score: 60/70
 86889a4
+do., 10 de abr. de 2022 12:20:47: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:74:5: error: expected ',' or ';' before 'printf'
+     printf("\nel porcentaje es : %li\n", porcentaje);
+     ^~~~~~
+hashmap.c:73:10: error: unused variable 'porcentaje' [-Werror=unused-variable]
+     long porcentaje = ((map->capacity * 100)/map->size)
+          ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+380b96e

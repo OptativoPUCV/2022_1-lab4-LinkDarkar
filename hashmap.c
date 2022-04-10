@@ -70,8 +70,8 @@ void insertMap(HashMap * map, char * key, void * value)
 void enlarge(HashMap * map)
 {
     enlarge_called = 1; //no borrar (testing purposes)
-
-
+    long porcentaje = ((map->capacity * 100)/map->size)
+    printf("\nel porcentaje es : %li\n", porcentaje);
 }
 
 
