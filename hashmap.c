@@ -99,6 +99,7 @@ Pair * searchMap(HashMap * map,  char * key)
     {
         if (is_equal(key , map->buckets[index]->key) == 1)
         {
+            map->current = key;
             return map->buckets[index];
         }
         index = (index + 1) % map->capacity;
@@ -107,7 +108,7 @@ Pair * searchMap(HashMap * map,  char * key)
             return NULL;
         }
     }
-    
+
     return NULL;
 }
 
