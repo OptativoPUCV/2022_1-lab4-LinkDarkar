@@ -253,3 +253,17 @@ do., 10 de abr. de 2022 19:48:31:
  1 file changed, 1 deletion(-)
  tests:  0|0
 188bccb
+do., 10 de abr. de 2022 19:54:10: 
+ hashmap.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:105:25: error: implicit declaration of function 'nextmap' [-Werror=implicit-function-declaration]
+         oldBuckets[i] = nextmap(map);
+                         ^~~~~~~
+hashmap.c:105:23: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+         oldBuckets[i] = nextmap(map);
+                       ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+4087010
