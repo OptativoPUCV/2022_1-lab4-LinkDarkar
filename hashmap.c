@@ -123,7 +123,7 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map)
 {
-    for (int cont = 0 ; cont < map->capacity ; cont = ((cont + 1) % map->capacity))
+    for (int cont = 0 ; cont < map->capacity - 1 ; cont = ((cont + 1) % map->capacity))
     {
         if (map->buckets[cont] != NULL && map->buckets[cont]->key != NULL)
         {
@@ -137,6 +137,14 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
+    for (int index = map->current ; index < map->capacity - 1 ; index = ((index + 1) % map->capacity))
+    {
+        if (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
+        {
+            map->current = index;
+            return map->buckets[index];
+        }
+    }
 
     return NULL;
 }
