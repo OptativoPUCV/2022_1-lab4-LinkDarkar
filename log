@@ -15,3 +15,9 @@ hashmap.c:44:10: error: unused variable 'posicion' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 9e4d471
+do., 10 de abr. de 2022 11:05:37: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+d7c9b9a
