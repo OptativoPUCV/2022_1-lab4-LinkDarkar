@@ -172,3 +172,8 @@ hashmap.c:77:10: error: variable 'index' set but not used [-Werror=unused-but-se
 cc1.exe: all warnings being treated as errors
 Compilation failed
 4fc6b1d
+do., 10 de abr. de 2022 12:50:12: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+bb2bbb4

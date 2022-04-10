@@ -79,7 +79,7 @@ void enlarge(HashMap * map)
     while (map->size < old_map->size)
     {
         index = hash(aux->key , map->capacity);
-
+        index += 1;
     }
 
 }
