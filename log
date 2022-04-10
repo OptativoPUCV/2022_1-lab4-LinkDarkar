@@ -161,3 +161,14 @@ hashmap.c:73:13: error: variable 'old_buckets' set but not used [-Werror=unused-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 2ede92d
+do., 10 de abr. de 2022 12:49:54: 
+ hashmap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:77:10: error: variable 'index' set but not used [-Werror=unused-but-set-variable]
+     long index;
+          ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+4fc6b1d

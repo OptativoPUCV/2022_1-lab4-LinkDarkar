@@ -70,8 +70,18 @@ void insertMap(HashMap * map, char * key, void * value)
 void enlarge(HashMap * map)
 {
     enlarge_called = 1; //no borrar (testing purposes)
-    Pair ** old_buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
-    old_buckets = map->buckets;
+    HashMap * old_map = createMap(map->capacity);
+    map->capacity *= 2;
+    map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
+    map->size = 0;
+    long index;
+    Pair * aux = firstMap(old_map);
+    while (map->size < old_map->size)
+    {
+        index = hash(aux->key , map->capacity);
+
+    }
+
 }
 
 
