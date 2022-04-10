@@ -4,3 +4,14 @@ do., 10 de abr. de 2022 10:37:04:
  tests:  1|5
 total_score: 10/70
 658e514
+do., 10 de abr. de 2022 11:05:16: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:44:10: error: unused variable 'posicion' [-Werror=unused-variable]
+     long posicion = hash(key , map->capacity);
+          ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+9e4d471
