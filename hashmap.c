@@ -104,9 +104,9 @@ void enlarge(HashMap * map)
         oldBuckets[i] = nextMap(map);
     }
 
-    map->capacity *= 2;
+    long capacidadNueva = map->capacity * 2;
     free(map);
-    map = createMap(map->capacity);
+    map = createMap(capacidadNueva);
     for (long cont = 0 ; cont < old_capacity ; cont += 1)
     {
         insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
