@@ -69,9 +69,9 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map)
 {
+    /*
     enlarge_called = 1; //no borrar (testing purposes)
     HashMap * old_map = createMap(map->capacity);
-    long index;
     Pair * aux = firstMap(map);
     while (old_map->size < map->size)
     {
@@ -90,8 +90,26 @@ void enlarge(HashMap * map)
         }
         insertMap(map , aux->key , aux->value);
     }
-}
+    */
+    enlarge_called = 1;
+    Pair ** oldBuckets = (Pair **) calloc (map->capacity , sizeof(Pair**));
+    long old_size = map->size;
+    long old_capacity = map->capacity;
+    oldBuckets = map->buckets; //esta mal pero segurisimo vamos
 
+
+    map->capacity *= 2;
+    free(map);
+    map = createMap(map->capacity);
+
+    for (int cont = 0 ; cont < old_capacity ; cont = ((cont + 1) % old_capacity))
+    {
+        if (oldBuckets[cont] != NULL && oldBuckets[cont]->key != NULL)
+        {
+            insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
+        }
+    }
+}
 
 HashMap * createMap(long capacity)
 {

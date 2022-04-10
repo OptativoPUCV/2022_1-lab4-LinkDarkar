@@ -205,3 +205,14 @@ hashmap.c:74:10: error: unused variable 'index' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a2e09ce
+do., 10 de abr. de 2022 19:35:32: 
+ hashmap.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:96:10: error: unused variable 'old_size' [-Werror=unused-variable]
+     long old_size = map->size;
+          ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+0f5a98f
