@@ -99,7 +99,6 @@ void eraseMap(HashMap * map,  char * key)
         }
         index = (index + 1) % map->capacity;
     }
-
 }
 
 Pair * searchMap(HashMap * map,  char * key)
@@ -124,6 +123,13 @@ Pair * searchMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map)
 {
+    for (int cont = 0 ; cont < map->capacity ; cont += 1)
+    {
+        if (map->buckets[cont]->key != NULL && map->buckets[cont] != NULL)
+        {
+            return map->buckets[cont];
+        }
+    }
 
     return NULL;
 }
