@@ -150,3 +150,14 @@ hashmap.c:73:10: error: unused variable 'porcentaje' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 380b96e
+do., 10 de abr. de 2022 12:27:32: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:73:13: error: variable 'old_buckets' set but not used [-Werror=unused-but-set-variable]
+     Pair ** old_buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
+             ^~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+2ede92d
