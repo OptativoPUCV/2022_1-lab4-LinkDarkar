@@ -102,7 +102,7 @@ void enlarge(HashMap * map)
     oldBuckets[0] = firstMap(map);
     for(long i = 1 ; i < map->capacity ; i++)
     {
-        oldBuckets[i] = nextmap(map);
+        oldBuckets[i] = nextMap(map);
     }
 
     map->capacity *= 2;
