@@ -227,3 +227,9 @@ hashmap.c:93:4: error: "/*" within comment [-Werror=comment]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 9ae10c1
+do., 10 de abr. de 2022 19:42:29: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  16|1
+total_score: 60/70
+8171647

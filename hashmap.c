@@ -71,10 +71,12 @@ void enlarge(HashMap * map)
     enlarge_called = 1; //no borrar (testing purposes)
     HashMap * old_map = createMap(map->capacity);
     Pair * aux = firstMap(map);
-    while (old_map->size < map->size)
+    long cont = map->size;
+    while (cont > 0)
     {
         insertMap(old_map , aux->key , aux->value);
         nextMap(map);
+        cont -= 1;
     }
     /*
     map->capacity *= 2;
@@ -90,7 +92,6 @@ void enlarge(HashMap * map)
         insertMap(map , aux->key , aux->value);
     }
 
-   /*
     enlarge_called = 1;
     Pair ** oldBuckets = (Pair **) calloc (map->capacity , sizeof(Pair**));
     //long old_size = map->size;
