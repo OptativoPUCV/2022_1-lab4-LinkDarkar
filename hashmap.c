@@ -95,18 +95,19 @@ void enlarge(HashMap * map)
     */
 
     enlarge_called = 1;
-    Pair ** oldBuckets = (Pair **) calloc (map->capacity , sizeof(Pair**));
+    Pair ** oldBuckets; //= (Pair **) calloc (map->capacity , sizeof(Pair**));
     //long old_size = map->size;
     long old_capacity = map->capacity;
-    oldBuckets[0] = firstMap(map);
+    //oldBuckets[0] = firstMap(map);
+    /*
     for(long i = 1 ; i < map->capacity ; i++)
     {
         oldBuckets[i] = nextMap(map);
     }
-
-    long capacidadNueva = map->capacity * 2;
+    */
+    oldBuckets = map->buckets;
     free(map);
-    map = createMap(capacidadNueva);
+    map = createMap(old_capacity*2);
     for (long cont = 0 ; cont < old_capacity ; cont += 1)
     {
         insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
