@@ -110,7 +110,10 @@ void enlarge(HashMap * map)
     map = createMap(old_capacity*2);
     for (long cont = 0 ; cont < old_capacity ; cont += 1)
     {
-        insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
+        if (oldBuckets[cont] != NULL && oldBuckets[cont]->key != NULL)
+        {
+            insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
+        }
     }
 }
 
