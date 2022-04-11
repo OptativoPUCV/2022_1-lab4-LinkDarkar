@@ -71,11 +71,10 @@ void enlarge(HashMap * map)
     enlarge_called = 1;
     Pair ** oldBuckets;
     oldBuckets = map->buckets;
-    long old_capacity = map->capacity;
+    long oldCapacity = map->capacity;
     free(map);
-    map = createMap(old_capacity*2);
-    map->capacity *= 2;
-    for (long index = 0 ; index < old_capacity ; index += 1)
+    map = createMap(oldCapacity * 2);
+    for (long index = 0 ; index < oldCapacity ; index += 1)
     {
         if (oldBuckets[index] != NULL && oldBuckets[index]->key != NULL)
         {
