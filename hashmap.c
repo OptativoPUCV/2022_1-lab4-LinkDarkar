@@ -73,7 +73,8 @@ void enlarge(HashMap * map)
     oldBuckets = map->buckets;
     long oldCapacity = map->capacity;
     //free(map);
-    map = createMap(oldCapacity * 2);
+    map->capacity *= 2;
+    map = createMap(map->capacity);
     for (long index = 0 ; index < oldCapacity ; index += 1)
     {
         if (oldBuckets[index] != NULL && oldBuckets[index]->key != NULL)
