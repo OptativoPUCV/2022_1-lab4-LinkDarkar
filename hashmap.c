@@ -68,51 +68,17 @@ void insertMap(HashMap * map, char * key, void * value)
 
 void enlarge(HashMap * map)
 {
-    /*
-    enlarge_called = 1; //no borrar (testing purposes)
-    HashMap * old_map = createMap(map->capacity);
-    Pair * aux = firstMap(map);
-    long cont = map->size;
-    while (cont > 0)
-    {
-        insertMap(old_map , aux->key , aux->value);
-        nextMap(map);
-        cont -= 1;
-    }
-
-    map->capacity *= 2;
-    map = createMap(map->capacity);
-    //map->buckets = (Pair **) calloc (map->capacity , sizeof(HashMap));
-    map->size = 0;
-    aux = firstMap(old_map);
-    cont = old_map->size;
-    while (cont > 0)
-    {
-        insertMap(map , aux->key , aux->value);
-        aux = nextMap(old_map);
-        cont -= 1;
-    }
-    */
-
     enlarge_called = 1;
-    Pair ** oldBuckets; //= (Pair **) calloc (map->capacity , sizeof(Pair**));
-    //long old_size = map->size;
-    long old_capacity = map->capacity;
-    //oldBuckets[0] = firstMap(map);
-    /*
-    for(long i = 1 ; i < map->capacity ; i++)
-    {
-        oldBuckets[i] = nextMap(map);
-    }
-    */
+    Pair ** oldBuckets;
     oldBuckets = map->buckets;
+    long old_capacity = map->capacity;
     free(map);
     map = createMap(old_capacity*2);
-    for (long cont = 0 ; cont < old_capacity ; cont += 1)
+    for (long index = 0 ; index < old_capacity ; index += 1)
     {
-        if (oldBuckets[cont] != NULL && oldBuckets[cont]->key != NULL)
+        if (oldBuckets[index] != NULL && oldBuckets[index]->key != NULL)
         {
-            insertMap(map , oldBuckets[cont]->key , oldBuckets[cont]->value);
+            insertMap(map , oldBuckets[index]->key , oldBuckets[index]->value);
         }
     }
 }
