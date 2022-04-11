@@ -80,10 +80,6 @@ void enlarge(HashMap * map)
         {
             insertMap(map , oldBuckets[index]->key , oldBuckets[index]->value);
         }
-        else
-        {
-            insertMap(map , NULL , NULL);
-        }
     }
 }
 
