@@ -72,8 +72,9 @@ void enlarge(HashMap * map)
     Pair ** oldBuckets;
     oldBuckets = map->buckets;
     long oldCapacity = map->capacity;
-    free(map);
-    map = createMap(oldCapacity * 2);
+    //free(map);
+    map->buckets = (Pair **) calloc (oldCapacity*2 , sizeof(HashMap));
+    map->capacity = oldCapacity*2;
     for (long index = 0 ; index < oldCapacity ; index += 1)
     {
         if (oldBuckets[index] != NULL && oldBuckets[index]->key != NULL)
